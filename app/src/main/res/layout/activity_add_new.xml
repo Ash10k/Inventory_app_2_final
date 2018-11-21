@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddNew">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentLeft="true"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/label_product"
+            android:layout_marginTop="20dp"
+            android:text="@string/product"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/label_price"
+            android:layout_marginTop="25dp"
+            android:text="@string/price"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="25dp"
+            android:layout_toRightOf="@id/label_price"
+            android:layout_height="wrap_content"
+            android:text="@string/quantity"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="25dp"
+            android:id="@+id/label"
+            android:layout_height="wrap_content"
+            android:text="@string/supplier_name"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="25dp"
+            android:layout_height="wrap_content"
+            android:text="@string/supplier_phone"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentRight="true"
+        android:layout_height="wrap_content"
+        >
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/label_product"
+            android:layout_marginTop="5dp"
+            android:id="@+id/eProduct"
+            android:layout_height="wrap_content"
+            android:hint="@string/product"/>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/label_product"
+            android:layout_marginTop="1dp"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:id="@+id/ePrice"
+            android:hint="@string/price"/>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/eQuantity"
+            android:layout_marginTop="1dp"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:hint="@string/quantity"/>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/eSupplierName"
+            android:layout_marginTop="1dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/supplier_name"/>
+        <EditText
+            android:layout_width="wrap_content"
+            android:id="@+id/eSupplierPhone"
+            android:layout_marginLeft="20dp"
+            android:inputType="phone"
+            android:layout_marginTop="1dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/supplier_phone"/>
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/save_data"
+        android:layout_centerInParent="true"
+        android:text="@string/Save"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/delete_data"
+        android:layout_below="@id/save_data"
+        android:layout_centerInParent="true"
+        android:text="@string/delete"/>
+
+</RelativeLayout>
