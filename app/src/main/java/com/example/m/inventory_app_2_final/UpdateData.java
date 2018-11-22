@@ -73,6 +73,17 @@ public class UpdateData extends AppCompatActivity {
         update_data_h.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                update_val_product = update_product.getText().toString().trim();
+                update_val_price = update_price.getText().toString().trim();
+                update_val_quantity = update_quantity.getText().toString().trim();
+                update_val_supplier = update_supplier.getText().toString().trim();
+                update_val_supplier_phone = update_supplier_phone.getText().toString().trim();
+
+                if (update_val_product.isEmpty() == true && update_val_price.isEmpty() == true && update_val_quantity.isEmpty() == true && update_val_supplier.isEmpty() == true &&  update_val_supplier_phone.isEmpty() == true )
+                {
+                    Toast.makeText(getApplicationContext(),"Cannot Update Blank Fields",Toast.LENGTH_SHORT).show();
+                }
+                else
                 update();
 
             }
@@ -187,16 +198,20 @@ public class UpdateData extends AppCompatActivity {
         if (g != null) {
             g.moveToNext();
             int sale_value = Integer.parseInt(g.getString(g.getColumnIndex(QUANTITY)));
-            Toast.makeText(getApplicationContext(),
-                    "Sales quantity: " + sale_value, Toast.LENGTH_SHORT).show();
-            values.put(QUANTITY, sale_value - 1);
-            int result = getContentResolver().update(CurrentProductUri, values, null, null);
-            if (result == -1)
-                Log.d("Error", "Failed to Sale");
-            else {
-                Log.d("Sucess", "Success Sale");
-                finish();
+            if (sale_value>0){
+                values.put(QUANTITY, sale_value - 1);
+                int result = getContentResolver().update(CurrentProductUri, values, null, null);
+                if (result == -1)
+                    Log.d("Error", "Failed to Sale");
+                else {
+                    Log.d("Sucess", "Success Sale");
+                    finish();
+                }
             }
+            else {
+                Toast.makeText(getApplicationContext(),"Cannot Decrease Empty Stock",Toast.LENGTH_SHORT).show();
+            }
+
 
         }
     }
@@ -207,9 +222,7 @@ public class UpdateData extends AppCompatActivity {
         if (g != null) {
             g.moveToNext();
             int sale_value = Integer.parseInt(g.getString(g.getColumnIndex(QUANTITY)));
-            Toast.makeText(getApplicationContext(),
-                    "Sales quantity: " + sale_value, Toast.LENGTH_SHORT).show();
-            values.put(QUANTITY, sale_value + 1);
+             values.put(QUANTITY, sale_value + 1);
             int result = getContentResolver().update(CurrentProductUri, values, null, null);
             if (result == -1)
                 Log.d("Error", "Failed to Sale");

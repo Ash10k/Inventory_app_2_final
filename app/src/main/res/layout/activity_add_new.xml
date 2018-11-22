@@ -70,7 +70,7 @@
             android:layout_toRightOf="@id/label_product"
             android:layout_marginTop="1dp"
             android:layout_height="wrap_content"
-            android:inputType="phone"
+            android:inputType="number"
             android:id="@+id/ePrice"
             android:hint="@string/price"/>
         <EditText
@@ -79,7 +79,7 @@
             android:id="@+id/eQuantity"
             android:layout_marginTop="1dp"
             android:layout_height="wrap_content"
-            android:inputType="phone"
+            android:inputType="number"
             android:hint="@string/quantity"/>
         <EditText
             android:layout_width="wrap_content"
@@ -105,12 +105,5 @@
         android:layout_centerInParent="true"
         android:text="@string/Save"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/delete_data"
-        android:layout_below="@id/save_data"
-        android:layout_centerInParent="true"
-        android:text="@string/delete"/>
 
 </RelativeLayout>

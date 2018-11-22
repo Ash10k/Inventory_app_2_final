@@ -82,6 +82,7 @@
             android:id="@+id/update_ePrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:inputType="number"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="1dp"
             android:layout_toRightOf="@id/label_product"
@@ -92,6 +93,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
+            android:inputType="number"
             android:layout_marginTop="1dp"
             android:hint="@string/quantity" />
 
